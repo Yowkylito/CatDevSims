@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steward</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="mast">
+      <div>
+        <h1>Steward</h1>
+        <p class="tag">One owner. Cost first. No silent spend.</p>
+      </div>
+      <div class="mast-meta">
+        <span id="env-badge">local heuristic</span>
+        <span id="mock-count">mock calls: 0</span>
+      </div>
+    </header>
+
+    <section class="budgets" aria-label="Spend caps">
+      <div class="bar-block">
+        <div class="bar-label">
+          <span>Daily</span>
+          <span id="daily-fig">$0.00 / $5.00</span>
+        </div>
+        <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="daily-track">
+          <div class="fill" id="daily-fill"></div>
+        </div>
+      </div>
+      <div class="bar-block">
+        <div class="bar-label">
+          <span>Monthly (20× daily)</span>
+          <span id="monthly-fig">$0.00 / $100.00</span>
+        </div>
+        <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="monthly-track">
+          <div class="fill" id="monthly-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="route-card" aria-live="polite">
+      <div class="route-row">
+        <div>
+          <div class="kicker">Will run</div>
+          <div id="owner" class="owner">—</div>
+        </div>
+        <div>
+          <div class="kicker">Estimated cost</div>
+          <div id="cost" class="cost">$—.————</div>
+        </div>
+        <div>
+          <div class="kicker">Tokens in / out</div>
+          <div id="tokens" class="tokens">— / —</div>
+        </div>
+      </div>
+      <p id="reason" class="reason">Type a prompt. Classify is local and free.</p>
+      <p id="block" class="block hidden"></p>
+    </section>
+
+    <label class="composer-label" for="prompt">Prompt</label>
+    <textarea id="prompt" rows="8" placeholder="Ask Steward. Drafts → ChatGPT. Repo/PR/files → Cursor. Hard reasoning → Claude."></textarea>
+
+    <div class="controls">
+      <label class="toggle">
+        <input type="checkbox" id="fanout" />
+        <span>Fan-out (off by default — costs extra)</span>
+      </label>
+      <div class="btns">
+        <button type="button" id="stop" class="stop">Stop</button>
+        <button type="button" id="send" class="send" disabled>Send</button>
+      </div>
+    </div>
+
+    <section class="out">
+      <div class="kicker">Response <span id="call-flag" class="hidden"> · backend call in flight</span></div>
+      <pre id="output">No send yet. Send stays dead without a finite estimate.</pre>
+    </section>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

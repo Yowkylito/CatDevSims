@@ -1,0 +1,8 @@
+{
+  "identifier": "default",
+  "description": "Steward default capability — core IPC only, no shell.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default"
+  ]
+}

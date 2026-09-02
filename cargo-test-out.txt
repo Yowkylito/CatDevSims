@@ -1,0 +1,31 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.23s
+     Running unittests src/lib.rs (target/debug/deps/steward_core-d1c4ae1ad879c6f4)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/p0.rs (target/debug/deps/p0-a2f39a65348813b9)
+
+running 11 tests
+test classify_forces_fanout_false_when_toggle_off ... ok
+test p0_claude_chatgpt_payload_with_repo_path_fails_no_call ... ok
+test p0_fanout_disabled_successful_send_is_exactly_one_mock_call ... ok
+test p0_local_cache_hit_is_only_legal_zero_and_does_not_tick_backend ... ok
+test p0_classify_never_increments_mock_call_count ... ok
+test p0_missing_or_non_finite_est_cost_send_dead_zero_calls ... ok
+test p0_429_then_retry_does_not_bump_call_count_a_second_time ... ok
+test p0_paid_owner_zero_cost_is_blocked_missing_estimate ... ok
+test p0_router_lie_fanout_object_while_disabled_send_dead ... ok
+test p0_send_blocked_does_not_call_backend ... ok
+test payload_detects_unix_and_windows_abs_paths ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests steward_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+EXIT:0

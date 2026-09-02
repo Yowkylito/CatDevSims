@@ -1,0 +1,16 @@
+{
+  "name": "steward",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first desktop orchestrator so Claude, Cursor, and ChatGPT work as one team without burning tokens.",
+  "scripts": {
+    "test": "sh run-tests.sh",
+    "test:node22": "node --test --experimental-strip-types tests/steward.test.ts",
+    "test:rust": "cargo test --manifest-path steward-core/Cargo.toml",
+    "tauri": "tauri"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

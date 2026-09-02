@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steward</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="top">
+        <h1>Steward</h1>
+        <p class="tag">Local-first. Claude, Cursor, and ChatGPT as one team. Mock mode until keys exist.</p>
+      </header>
+      <section class="composer" id="composer">
+        <label class="sr" for="prompt">Prompt</label>
+        <textarea id="prompt" rows="8" placeholder="What should the team do? Classify is free. Send stays dead until a finite estimate is unblocked."></textarea>
+        <div class="meta">
+          <div class="pill" id="owner-pill">owner: —</div>
+          <div class="pill" id="cost-pill">est. $—</div>
+          <label class="toggle"><input type="checkbox" id="fanout" /> fan-out</label>
+        </div>
+        <p class="reason" id="reason">Classify to see a one-line reason.</p>
+        <div class="bars">
+          <label>Daily <span id="daily-label">$0 / $5</span>
+            <div class="bar"><div class="fill" id="daily-fill"></div></div>
+          </label>
+          <label>Monthly <span id="monthly-label">$0 / $50</span>
+            <div class="bar"><div class="fill" id="monthly-fill"></div></div>
+          </label>
+        </div>
+        <div class="actions">
+          <button type="button" id="classify-btn">Classify (free)</button>
+          <button type="button" id="send-btn" disabled>Send</button>
+          <button type="button" id="stop-btn" class="stop">Stop</button>
+        </div>
+        <pre class="out" id="out">Mock/offline default. UI never calls a backend; it only talks to Steward core.</pre>
+      </section>
+    </main>
+    <script type="module" src="./composer.js"></script>
+  </body>
+</html>
